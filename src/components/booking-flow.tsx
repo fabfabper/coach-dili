@@ -15,7 +15,7 @@ export function BookingFlow({ locale, selectedService }: { locale: Locale; selec
         <p>{content.booking.note}</p>
         <Link className="button button-dark" href={bookingUrl} target="_blank" rel="noreferrer">
           {content.labels.book}
-          <span aria-hidden="true">↗</span>
+          <span className="button-arrow" aria-hidden="true" />
         </Link>
       </div>
     </div>

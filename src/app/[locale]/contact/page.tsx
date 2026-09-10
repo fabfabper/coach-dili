@@ -38,7 +38,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
             </div>
             <button className="button button-dark" type="submit">
               {content.contact.submit}
-              <span aria-hidden="true">↗</span>
+              <span className="button-arrow" aria-hidden="true" />
             </button>
           </form>
         </div>

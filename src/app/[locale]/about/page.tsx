@@ -12,7 +12,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <section className="split-section section-light">
         <div className="split-image">
           <StudioImage
-            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=85"
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=85"
             alt={content.about.imageAlt}
           />
         </div>
