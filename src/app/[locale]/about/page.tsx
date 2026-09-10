@@ -6,5 +6,39 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   const { locale: rawLocale } = await params;
   if (!isLocale(rawLocale)) notFound();
   const content = getContent(rawLocale);
-  return <main><PageHero locale={rawLocale} eyebrow={content.about.eyebrow} title={content.about.title} /><section className="split-section section-light"><div className="split-image"><StudioImage src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=85" alt={content.about.imageAlt} /></div><div className="split-copy">{content.about.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></section><section className="section section-dark"><div className="shell"><div className="section-heading"><p className="eyebrow">{content.about.eyebrow}</p><h2>{content.about.principlesTitle}</h2></div><div className="principles">{content.principles.map((principle) => <article className="principle" key={principle.number}><span className="principle-number">{principle.number}</span><h3>{principle.title}</h3><p>{principle.body}</p></article>)}</div></div></section></main>;
+  return (
+    <main>
+      <PageHero locale={rawLocale} eyebrow={content.about.eyebrow} title={content.about.title} />
+      <section className="split-section section-light">
+        <div className="split-image">
+          <StudioImage
+            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=85"
+            alt={content.about.imageAlt}
+          />
+        </div>
+        <div className="split-copy">
+          {content.about.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+      <section className="section section-dark">
+        <div className="shell">
+          <div className="section-heading">
+            <p className="eyebrow">{content.about.eyebrow}</p>
+            <h2>{content.about.principlesTitle}</h2>
+          </div>
+          <div className="principles">
+            {content.principles.map((principle) => (
+              <article className="principle" key={principle.number}>
+                <span className="principle-number">{principle.number}</span>
+                <h3>{principle.title}</h3>
+                <p>{principle.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

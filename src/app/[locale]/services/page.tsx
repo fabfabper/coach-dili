@@ -6,5 +6,19 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const { locale: rawLocale } = await params;
   if (!isLocale(rawLocale)) notFound();
   const content = getContent(rawLocale);
-  return <main><PageHero locale={rawLocale} eyebrow={content.services.eyebrow} title={content.services.title} intro={content.services.intro} /><section className="section"><div className="shell"><ServiceList locale={rawLocale} services={content.servicesList} /></div></section></main>;
+  return (
+    <main>
+      <PageHero
+        locale={rawLocale}
+        eyebrow={content.services.eyebrow}
+        title={content.services.title}
+        intro={content.services.intro}
+      />
+      <section className="section">
+        <div className="shell">
+          <ServiceList locale={rawLocale} services={content.servicesList} />
+        </div>
+      </section>
+    </main>
+  );
 }

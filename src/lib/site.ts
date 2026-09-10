@@ -12,9 +12,18 @@ export function getMetadata(locale: Locale): Metadata {
   const isGerman = locale === "de";
   return {
     title: isGerman ? "Coach Dili | Personal Training in Zürich" : "Coach Dili | Personal Training in Zurich",
-    description: isGerman ? "Persönliches Kraft- und Konditionstraining in Zürich. Klar, nachhaltig und auf dich abgestimmt." : "Personal strength and conditioning in Zurich. Thoughtful, sustainable training built around you.",
+    description: isGerman
+      ? "Persönliches Kraft- und Konditionstraining in Zürich. Klar, nachhaltig und auf dich abgestimmt."
+      : "Personal strength and conditioning in Zurich. Thoughtful, sustainable training built around you.",
     metadataBase: new URL(siteConfig.url),
     alternates: { canonical: `/${locale}`, languages: { de: "/de", en: "/en" } },
-    openGraph: { title: "Coach Dili", description: isGerman ? "Training, das Platz für dein Leben lässt." : "Training that makes room for your life.", url: `/${locale}`, siteName: "Coach Dili", locale: isGerman ? "de_CH" : "en_GB", type: "website" },
+    openGraph: {
+      title: "Coach Dili",
+      description: isGerman ? "Training, das Platz für dein Leben lässt." : "Training that makes room for your life.",
+      url: `/${locale}`,
+      siteName: "Coach Dili",
+      locale: isGerman ? "de_CH" : "en_GB",
+      type: "website",
+    },
   };
 }

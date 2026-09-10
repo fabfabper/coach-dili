@@ -8,5 +8,16 @@ export function BookingFlow({ locale, selectedService }: { locale: Locale; selec
   const content = getContent(locale);
   const serviceQuery = selectedService ? `?service=${encodeURIComponent(selectedService)}` : "";
   const bookingUrl = `${siteConfig.bookingUrl}${serviceQuery}`;
-  return <div className="booking-widget"><BookingWidget /><div className="booking-placeholder"><p>{content.booking.note}</p><Link className="button button-dark" href={bookingUrl} target="_blank" rel="noreferrer">{content.labels.book}<span aria-hidden="true">↗</span></Link></div></div>;
+  return (
+    <div className="booking-widget">
+      <BookingWidget />
+      <div className="booking-placeholder">
+        <p>{content.booking.note}</p>
+        <Link className="button button-dark" href={bookingUrl} target="_blank" rel="noreferrer">
+          {content.labels.book}
+          <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+    </div>
+  );
 }
