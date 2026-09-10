@@ -233,8 +233,8 @@ const content: Record<Locale, Content> = {
       secondaryCta: "Meinen Ansatz entdecken",
       imageAlt: "Coach Dili in einem hellen Trainingsstudio",
       servicesEyebrow: "Gemeinsam trainieren",
-      servicesTitle: "Eine Praxis, die sich nach dir richtet.",
-      trainerEyebrow: "Deine Coach",
+      servicesTitle: "Ein Training, das sich nach dir richtet.",
+      trainerEyebrow: "Dein Coach",
       trainerTitle: "Training soll in dein Leben passen — nicht umgekehrt.",
       trainerBody:
         "Ich schaffe ruhige, fokussierte Räume für mehr Kraft, Vertrauen und nachhaltigen Fortschritt. Jede Einheit beginnt dort, wo du gerade stehst.",

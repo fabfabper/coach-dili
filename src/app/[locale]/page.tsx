@@ -19,22 +19,22 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <p className="eyebrow">{content.home.eyebrow}</p>
           <h1 className="display-title">{content.home.title}</h1>
           <p className="hero-intro">{content.home.intro}</p>
-          <div className="hero-actions">
-            <Link className="button button-dark" href={`/${locale}/booking`}>
-              {content.home.primaryCta}
-              <span aria-hidden="true">↗</span>
-            </Link>
-            <Link className="text-link" href={`/${locale}#approach`}>
-              {content.home.secondaryCta}
-            </Link>
-          </div>
         </div>
         <div className="hero-image">
           <StudioImage
-            src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1600&q=85"
+            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=85"
             alt={content.home.imageAlt}
             priority
           />
+          <div className="hero-overlay-actions">
+            <Link className="button button-light" href={`/${locale}/booking`}>
+              {content.home.primaryCta}
+              <span className="button-arrow" aria-hidden="true" />
+            </Link>
+            <Link className="button button-ghost" href={`/${locale}/services`}>
+              {content.navigation[0].label}
+            </Link>
+          </div>
         </div>
       </section>
       <section className="section section-light">
@@ -62,7 +62,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <section className="split-section section-warm">
         <div className="split-image">
           <StudioImage
-            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1400&q=85"
+            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1400&q=85"
             alt={content.about.imageAlt}
           />
         </div>
@@ -106,7 +106,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <p>{content.home.ctaBody}</p>
           <Link className="button button-dark" href={`/${locale}/booking`}>
             {content.home.primaryCta}
-            <span aria-hidden="true">↗</span>
+            <span className="button-arrow" aria-hidden="true" />
           </Link>
         </div>
       </section>

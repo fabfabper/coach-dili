@@ -16,7 +16,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         </div>
         <Link className="button button-light" href={`/${locale}/booking`}>
           {content.labels.book}
-          <span aria-hidden="true">↗</span>
+          <span className="button-arrow" aria-hidden="true" />
         </Link>
       </div>
       <div className="shell footer-bottom">
@@ -31,7 +31,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/impressum`}>{content.legal.imprintTitle}</Link>
           <a href="mailto:hello@coachdili.ch">hello@coachdili.ch</a>
           <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
-            Instagram ↗
+            Instagram →
           </a>
         </div>
       </div>

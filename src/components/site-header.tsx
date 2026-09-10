@@ -44,7 +44,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
               onClick={() => setOpen(false)}
             >
               {content.labels.book}
-              <span aria-hidden="true">↗</span>
+              <span className="button-arrow" aria-hidden="true" />
             </Link>
           </div>
         </nav>

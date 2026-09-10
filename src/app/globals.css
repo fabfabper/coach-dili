@@ -91,6 +91,7 @@ textarea {
   justify-content: center;
   gap: 18px;
   border: 1px solid var(--ink);
+  border-radius: 999px;
   font-size: 13px;
   letter-spacing: 0.04em;
   transition:
@@ -102,8 +103,25 @@ textarea {
   transform: translateY(-2px);
 }
 .button span {
-  font-size: 18px;
-  line-height: 0;
+  flex: 0 0 auto;
+}
+.button-arrow {
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 1px;
+  background: currentColor;
+}
+.button-arrow::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  transform: rotate(45deg);
 }
 .button-dark {
   background: var(--ink);
@@ -121,6 +139,16 @@ textarea {
 .button-light:hover {
   background: transparent;
   color: var(--paper);
+}
+.button-ghost {
+  border-color: rgba(244, 243, 239, 0.72);
+  background: rgba(28, 33, 30, 0.2);
+  color: var(--paper);
+  backdrop-filter: blur(8px);
+}
+.button-ghost:hover {
+  background: var(--paper);
+  color: var(--ink);
 }
 .button-small {
   min-height: 42px;
@@ -187,7 +215,7 @@ p {
   padding-bottom: 5px;
 }
 .text-link::after {
-  content: "↗";
+  content: "→";
   font-size: 16px;
 }
 .hero-image,
@@ -202,8 +230,18 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(28, 33, 30, 0.12), transparent 38%);
+  background: linear-gradient(180deg, rgba(28, 33, 30, 0.08), transparent 42%, rgba(28, 33, 30, 0.55));
   pointer-events: none;
+}
+.hero-overlay-actions {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  left: 32px;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .image-fill {
   width: 100%;
@@ -287,6 +325,7 @@ p {
   font-size: 17px;
 }
 .split-image {
+  position: relative;
   min-height: 600px;
 }
 .principles {
@@ -579,7 +618,17 @@ p {
     padding: 150px 20px 70px;
   }
   .hero-image {
-    min-height: 480px;
+    min-height: 560px;
+  }
+  .hero-overlay-actions {
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-overlay-actions .button {
+    width: 100%;
   }
   .display-title {
     font-size: clamp(49px, 14vw, 76px);
