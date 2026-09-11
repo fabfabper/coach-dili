@@ -2,19 +2,28 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/content";
 import { getContent } from "@/lib/content";
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const content = getContent(locale);
   const alternate = content.alternateLocale;
   const isHome = pathname === `/${locale}`;
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={`site-header${isHome ? " site-header-light" : ""}`}>
+    <header className={`site-header${isHome ? " site-header-light" : ""}${isScrolled ? " site-header-scrolled" : ""}`}>
       <div className="shell header-inner">
         <Link className="wordmark" href={`/${locale}`} onClick={() => setOpen(false)} aria-label="Coach Dili home">
           COACH <span>DILI</span>

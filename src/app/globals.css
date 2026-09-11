@@ -37,13 +37,18 @@ textarea {
   margin-inline: auto;
 }
 .site-header {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto;
   z-index: 10;
+  transition: background-color 0.2s ease;
   color: var(--ink);
 }
 .site-header-light {
   color: var(--paper);
+}
+.site-header-scrolled {
+  background: var(--paper);
+  color: var(--ink);
 }
 .header-inner {
   min-height: 96px;
@@ -249,6 +254,17 @@ p {
 .site-header-light .nav-links a:hover,
 .site-header-light .language-switch:hover {
   color: var(--paper);
+}
+.site-header-scrolled .header-inner {
+  border-bottom-color: var(--line);
+}
+.site-header-scrolled .nav-links a,
+.site-header-scrolled .language-switch {
+  color: var(--muted);
+}
+.site-header-scrolled .nav-links a:hover,
+.site-header-scrolled .language-switch:hover {
+  color: var(--ink);
 }
 .hero-image::after {
   content: "";
