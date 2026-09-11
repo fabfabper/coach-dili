@@ -29,7 +29,11 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           COACH <span>DILI</span>
         </Link>
         <div className="header-controls">
-          <Link className="language-switch mobile-language-switch" href={`/${alternate}`} onClick={() => setOpen(false)}>
+          <Link
+            className="language-switch mobile-language-switch"
+            href={`/${alternate}`}
+            onClick={() => setOpen(false)}
+          >
             {alternate.toUpperCase()}
           </Link>
           <button
