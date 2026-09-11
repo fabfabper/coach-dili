@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-parts";
 import { getContent, isLocale } from "@/lib/content";
+import { siteConfig } from "@/lib/site";
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params;
@@ -18,7 +19,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
             to booking.
           </p>
           <h2>Contact</h2>
-          <p>For privacy questions, contact hello@coachdili.ch.</p>
+          <p>For privacy questions, contact {siteConfig.email}.</p>
         </div>
       </section>
     </main>

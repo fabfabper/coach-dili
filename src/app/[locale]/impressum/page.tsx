@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/page-parts";
 import { getContent, isLocale } from "@/lib/content";
+import { siteConfig } from "@/lib/site";
 
 export default async function ImpressumPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale: rawLocale } = await params;
@@ -14,9 +15,13 @@ export default async function ImpressumPage({ params }: { params: Promise<{ loca
           <p>{content.legal.placeholder}</p>
           <h2>Coach Dili</h2>
           <p>
-            Zurich, Switzerland
+            {siteConfig.venue}
             <br />
-            hello@coachdili.ch
+            {siteConfig.streetAddress}
+            <br />
+            {siteConfig.postalCode} {siteConfig.city}
+            <br />
+            {siteConfig.email}
           </p>
           <h2>Responsible for content</h2>
           <p>Coach Dili</p>
