@@ -27,12 +27,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <p className="hero-intro">{content.home.intro}</p>
           </div>
           <div className="hero-overlay-actions">
-            <Link className="button button-light" href={`/${locale}/booking`}>
+            <Link className="button button-light" href={`/${locale}/services`}>
               {content.home.primaryCta}
               <span className="button-arrow" aria-hidden="true" />
-            </Link>
-            <Link className="button button-ghost" href={`/${locale}/services`}>
-              {content.navigation[1].label}
             </Link>
             <a
               className="button button-ghost hero-instagram-link"

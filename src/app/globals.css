@@ -264,7 +264,7 @@ p {
   left: max(32px, calc((100vw - 1240px) / 2));
   z-index: 1;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
 }
 .image-fill {
@@ -528,9 +528,11 @@ p {
   font-size: 13px;
 }
 .service-action {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
   align-items: start;
+  margin-top: 28px;
 }
 .booking-layout {
   display: block;
@@ -708,14 +710,12 @@ p {
     right: 20px;
     bottom: 20px;
     left: 20px;
-    flex-direction: row;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 52px;
   }
   .hero-overlay-actions .button-light {
     width: 100%;
-  }
-  .hero-overlay-actions .button-ghost:not(.hero-instagram-link) {
-    flex: 1;
+    min-width: 0;
   }
   .hero-overlay-actions .hero-instagram-link {
     width: 52px;

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Locale, Service } from "@/lib/content";
 import { getContent } from "@/lib/content";
 
@@ -51,14 +50,14 @@ export function ServiceList({
               <span>{service.duration}</span>
               <span>{service.price}</span>
             </div>
+            {action && (
+              <div className="service-action">
+                <a className="text-link" href={`/${locale}/booking?service=${service.id}`}>
+                  {content.labels.book}
+                </a>
+              </div>
+            )}
           </div>
-          {action && (
-            <div className="service-action">
-              <Link className="text-link" href={`/${locale}/booking?service=${service.id}`}>
-                {content.labels.book}
-              </Link>
-            </div>
-          )}
         </article>
       ))}
     </div>

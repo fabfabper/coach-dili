@@ -14,7 +14,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </Link>
           <p className="footer-tagline">{content.home.intro}</p>
         </div>
-        <Link className="button button-light" href={`/${locale}/booking`}>
+        <Link className="button button-light" href={`/${locale}/services`}>
           {content.labels.book}
           <span className="button-arrow" aria-hidden="true" />
         </Link>

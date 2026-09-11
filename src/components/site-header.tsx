@@ -43,7 +43,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             </Link>
             <Link
               className="button button-dark button-small"
-              href={`/${locale}/booking`}
+              href={`/${locale}/services`}
               onClick={() => setOpen(false)}
             >
               {content.labels.book}

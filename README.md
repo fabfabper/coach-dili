@@ -18,6 +18,7 @@ Set these values in `.env.local` or Vercel project settings:
 
 - `NEXT_PUBLIC_SITE_URL`: canonical production URL, used for metadata, sitemap and robots.
 - `NEXT_PUBLIC_SIMPLYBOOK_URL`: public SimplyBook.me URL. Booking remains external; no credentials belong here.
+- `NEXT_PUBLIC_SIMPLYBOOK_SERVICE_PERSONAL_60`, `NEXT_PUBLIC_SIMPLYBOOK_SERVICE_PERSONAL_90`, `NEXT_PUBLIC_SIMPLYBOOK_SERVICE_ONLINE_60`: optional public SimplyBook service IDs used to preselect a service in the embedded widget.
 - `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT`: optional hosted/serverless form endpoint. Leave empty until a provider is selected.
 
 Update business copy, services, prices and translations in `src/lib/content.ts`. Replace the temporary Unsplash image URLs in the page files with supplied trainer photography before launch.

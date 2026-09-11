@@ -6,11 +6,12 @@ import { siteConfig } from "@/lib/site";
 
 export function BookingFlow({ locale, selectedService }: { locale: Locale; selectedService?: string }) {
   const content = getContent(locale);
-  const serviceQuery = selectedService ? `?service=${encodeURIComponent(selectedService)}` : "";
+  const service = content.servicesList.find((item) => item.id === selectedService);
+  const serviceQuery = service ? `?service=${encodeURIComponent(service.id)}` : "";
   const bookingUrl = `${siteConfig.bookingUrl}${serviceQuery}`;
   return (
     <div className="booking-widget">
-      <BookingWidget />
+      <BookingWidget predefinedServiceId={service?.simplyBookId} />
       <div className="booking-placeholder">
         <p>{content.booking.note}</p>
         <Link className="button button-dark" href={bookingUrl} target="_blank" rel="noreferrer">
