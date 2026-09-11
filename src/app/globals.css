@@ -42,6 +42,9 @@ textarea {
   z-index: 10;
   color: var(--ink);
 }
+.site-header-light {
+  color: var(--paper);
+}
 .header-inner {
   min-height: 96px;
   display: flex;
@@ -142,7 +145,7 @@ textarea {
 }
 .button-ghost {
   border-color: rgba(244, 243, 239, 0.72);
-  background: rgba(28, 33, 30, 0.2);
+  background: transparent;
   color: var(--paper);
   backdrop-filter: blur(8px);
 }
@@ -162,15 +165,25 @@ textarea {
 }
 .hero {
   min-height: 760px;
-  display: grid;
-  grid-template-columns: 46% 54%;
+  display: flex;
+  flex-direction: column;
   background: var(--warm);
 }
 .hero-copy {
-  padding: 192px 40px 80px max(32px, calc((100vw - 1240px) / 2));
+  position: absolute;
+  right: 32px;
+  bottom: 150px;
+  left: max(32px, calc((100vw - 1240px) / 2));
+  z-index: 1;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: var(--paper);
+}
+.hero-copy .eyebrow,
+.hero-copy .hero-intro {
+  color: rgba(244, 243, 239, 0.84);
 }
 .eyebrow {
   margin: 0 0 28px;
@@ -224,7 +237,18 @@ p {
   overflow: hidden;
 }
 .hero-image {
-  min-height: 760px;
+  min-height: 900px;
+}
+.site-header-light .header-inner {
+  border-bottom-color: rgba(244, 243, 239, 0.3);
+}
+.site-header-light .nav-links a,
+.site-header-light .language-switch {
+  color: rgba(244, 243, 239, 0.82);
+}
+.site-header-light .nav-links a:hover,
+.site-header-light .language-switch:hover {
+  color: var(--paper);
 }
 .hero-image::after {
   content: "";
@@ -237,10 +261,10 @@ p {
   position: absolute;
   right: 32px;
   bottom: 32px;
-  left: 32px;
+  left: max(32px, calc((100vw - 1240px) / 2));
   z-index: 1;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
 }
 .image-fill {
@@ -426,6 +450,40 @@ p {
 .footer-links {
   gap: 20px;
 }
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper) !important;
+}
+.instagram-link svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+.instagram-link .instagram-dot {
+  fill: currentColor;
+  stroke: none;
+}
+.hero-instagram-link svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+.hero-instagram-link {
+  width: 52px;
+  min-height: 52px;
+  padding: 0;
+  border-radius: 50%;
+}
+.hero-instagram-link .instagram-dot {
+  fill: currentColor;
+  stroke: none;
+}
 .page-hero {
   padding: 200px 0 100px;
   background: var(--warm);
@@ -470,9 +528,11 @@ p {
   font-size: 13px;
 }
 .service-action {
-  display: flex;
-  justify-content: flex-end;
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
   align-items: start;
+  margin-top: 28px;
 }
 .booking-layout {
   display: block;
@@ -526,6 +586,23 @@ p {
   font-family: var(--serif);
   font-size: clamp(27px, 4vw, 48px);
   letter-spacing: -0.04em;
+}
+.contact-instagram-link {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  font-size: 14px;
+}
+.contact-instagram-link svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+.contact-instagram-link .instagram-dot {
+  fill: currentColor;
+  stroke: none;
 }
 .form-field {
   margin-bottom: 24px;
@@ -593,6 +670,14 @@ p {
     background: var(--paper);
     border-bottom: 1px solid var(--line);
   }
+  .site-header-light .main-navigation .nav-links a,
+  .site-header-light .main-navigation .language-switch {
+    color: var(--muted);
+  }
+  .site-header-light .main-navigation .nav-links a:hover,
+  .site-header-light .main-navigation .language-switch:hover {
+    color: var(--ink);
+  }
   .main-navigation.is-open {
     display: block;
   }
@@ -610,25 +695,31 @@ p {
     margin-top: 28px;
   }
   .hero {
-    display: flex;
-    flex-direction: column;
     min-height: auto;
   }
   .hero-copy {
-    padding: 150px 20px 70px;
+    right: 20px;
+    bottom: 145px;
+    left: 20px;
+    padding: 0;
   }
   .hero-image {
-    min-height: 560px;
+    min-height: 680px;
   }
   .hero-overlay-actions {
     right: 20px;
     bottom: 20px;
     left: 20px;
-    flex-direction: column;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 52px;
   }
-  .hero-overlay-actions .button {
+  .hero-overlay-actions .button-light {
     width: 100%;
+    min-width: 0;
+  }
+  .hero-overlay-actions .hero-instagram-link {
+    width: 52px;
+    align-self: flex-start;
   }
   .display-title {
     font-size: clamp(49px, 14vw, 76px);

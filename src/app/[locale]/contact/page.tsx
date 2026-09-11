@@ -19,28 +19,21 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
           <div className="contact-details">
             <p className="eyebrow">Coach Dili</p>
             <a href="mailto:hello@coachdili.ch">hello@coachdili.ch</a>
-            <a href="tel:+41440000000">+41 44 000 00 00</a>
+            <a
+              className="contact-instagram-link"
+              href="https://www.instagram.com/coachdili"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram @coachdili"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" className="instagram-dot" />
+              </svg>
+            </a>
             <p style={{ color: "var(--muted)" }}>Zurich, Switzerland</p>
           </div>
-          <form action={process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT || "#"} method="POST">
-            <h2 className="form-title">{content.contact.formTitle}</h2>
-            <div className="form-field">
-              <label htmlFor="name">{content.contact.name}</label>
-              <input id="name" name="name" required />
-            </div>
-            <div className="form-field">
-              <label htmlFor="email">{content.contact.email}</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div className="form-field">
-              <label htmlFor="message">{content.contact.message}</label>
-              <textarea id="message" name="message" required />
-            </div>
-            <button className="button button-dark" type="submit">
-              {content.contact.submit}
-              <span className="button-arrow" aria-hidden="true" />
-            </button>
-          </form>
         </div>
       </section>
     </main>

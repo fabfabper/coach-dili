@@ -8,7 +8,7 @@ export function StructuredData() {
     url: siteConfig.url,
     areaServed: "Zurich",
     address: { "@type": "PostalAddress", addressLocality: "Zurich", addressCountry: "CH" },
-    sameAs: ["https://www.instagram.com"],
+    sameAs: ["https://www.instagram.com/coachdili"],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }

@@ -41,7 +41,7 @@ function loadWidgetScript() {
   return widgetScriptPromise;
 }
 
-export function BookingWidget() {
+export function BookingWidget({ predefinedServiceId }: { predefinedServiceId?: string }) {
   useEffect(() => {
     let mounted = true;
 
@@ -51,6 +51,7 @@ export function BookingWidget() {
         if (widgetInstanceCreated) return;
         if (!window.SimplybookWidget) return;
 
+        console.log("SimplyBook service ID:", predefinedServiceId ?? "none");
         new window.SimplybookWidget({
           widget_type: "iframe",
           url: "https://fabfabper.simplybook.me",
@@ -77,7 +78,11 @@ export function BookingWidget() {
           timeline: "modern",
           datepicker: "top_calendar",
           is_rtl: false,
-          app_config: { clear_session: 0, allow_switch_to_ada: 0, predefined: [] },
+          app_config: {
+            clear_session: 0,
+            allow_switch_to_ada: 0,
+            predefined: predefinedServiceId ? { service: predefinedServiceId } : [],
+          },
           container_id: widgetId,
         });
         widgetInstanceCreated = true;
@@ -86,10 +91,8 @@ export function BookingWidget() {
 
     return () => {
       mounted = false;
-      widgetInstanceCreated = false;
-      document.getElementById(widgetId)?.replaceChildren();
     };
-  }, []);
+  }, [predefinedServiceId]);
 
   return <div id={widgetId} aria-label="SimplyBook booking widget" />;
 }

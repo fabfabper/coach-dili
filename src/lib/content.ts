@@ -3,6 +3,7 @@ export type Locale = (typeof locales)[number];
 
 export type Service = {
   id: string;
+  simplyBookId?: string;
   number: string;
   title: string;
   shortTitle: string;
@@ -58,6 +59,7 @@ type Content = {
 const sharedServices = {
   personal60: {
     id: "personal-training-60",
+    simplyBookId: process.env.NEXT_PUBLIC_SIMPLYBOOK_SERVICE_PERSONAL_60,
     number: "01",
     shortTitle: "Personal Training",
     duration: "60 min",
@@ -65,6 +67,7 @@ const sharedServices = {
   },
   personal90: {
     id: "personal-training-90",
+    simplyBookId: process.env.NEXT_PUBLIC_SIMPLYBOOK_SERVICE_PERSONAL_90,
     number: "02",
     shortTitle: "Personal Training",
     duration: "90 min",
@@ -72,6 +75,7 @@ const sharedServices = {
   },
   online: {
     id: "online-coaching-60",
+    simplyBookId: process.env.NEXT_PUBLIC_SIMPLYBOOK_SERVICE_ONLINE_60,
     number: "03",
     shortTitle: "Online Coaching",
     duration: "60 min",
@@ -84,6 +88,7 @@ const content: Record<Locale, Content> = {
     languageName: "English",
     alternateLocale: "de",
     navigation: [
+      { label: "Home", href: "/en" },
       { label: "Services", href: "/en/services" },
       { label: "About", href: "/en/about" },
       { label: "Approach", href: "/en#approach" },
@@ -147,7 +152,7 @@ const content: Record<Locale, Content> = {
       eyebrow: "Booking",
       title: "Make time for your next step.",
       intro:
-        "Choose a service below, then continue to SimplyBook to find a time that works for you. Your booking, reminders and any changes stay securely with SimplyBook.",
+        "Find a time that works for you on SimplyBook. Your booking, reminders and any changes stay securely with SimplyBook.",
       note: "The booking window is provided by SimplyBook.me. No appointment information is stored on this website.",
       widgetTitle: "Choose your service",
     },
@@ -210,6 +215,7 @@ const content: Record<Locale, Content> = {
     languageName: "Deutsch",
     alternateLocale: "en",
     navigation: [
+      { label: "Startseite", href: "/de" },
       { label: "Angebot", href: "/de/services" },
       { label: "Über mich", href: "/de/about" },
       { label: "Ansatz", href: "/de#approach" },
@@ -273,7 +279,7 @@ const content: Record<Locale, Content> = {
       eyebrow: "Termin buchen",
       title: "Zeit für deinen nächsten Schritt.",
       intro:
-        "Wähle unten ein Angebot und finde anschliessend über SimplyBook einen passenden Termin. Buchung, Erinnerungen und Änderungen bleiben sicher bei SimplyBook.",
+        "Finde über SimplyBook einen passenden Termin. Buchung, Erinnerungen und Änderungen bleiben sicher bei SimplyBook.",
       note: "Das Buchungsfenster wird von SimplyBook.me bereitgestellt. Diese Website speichert keine Termindaten.",
       widgetTitle: "Angebot wählen",
     },
