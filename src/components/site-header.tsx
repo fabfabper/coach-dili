@@ -1,17 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import type { Locale } from "@/lib/content";
 import { getContent } from "@/lib/content";
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const content = getContent(locale);
   const alternate = content.alternateLocale;
+  const isHome = pathname === `/${locale}`;
 
   return (
-    <header className="site-header">
+    <header className={`site-header${isHome ? " site-header-light" : ""}`}>
       <div className="shell header-inner">
         <Link className="wordmark" href={`/${locale}`} onClick={() => setOpen(false)} aria-label="Coach Dili home">
           COACH <span>DILI</span>

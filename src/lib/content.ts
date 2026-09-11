@@ -84,6 +84,7 @@ const content: Record<Locale, Content> = {
     languageName: "English",
     alternateLocale: "de",
     navigation: [
+      { label: "Home", href: "/en" },
       { label: "Services", href: "/en/services" },
       { label: "About", href: "/en/about" },
       { label: "Approach", href: "/en#approach" },
@@ -210,6 +211,7 @@ const content: Record<Locale, Content> = {
     languageName: "Deutsch",
     alternateLocale: "en",
     navigation: [
+      { label: "Startseite", href: "/de" },
       { label: "Angebot", href: "/de/services" },
       { label: "Über mich", href: "/de/about" },
       { label: "Ansatz", href: "/de#approach" },

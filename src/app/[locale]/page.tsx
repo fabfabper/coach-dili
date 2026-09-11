@@ -15,25 +15,37 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <main>
       <section className="hero">
-        <div className="hero-copy">
-          <p className="eyebrow">{content.home.eyebrow}</p>
-          <h1 className="display-title">{content.home.title}</h1>
-          <p className="hero-intro">{content.home.intro}</p>
-        </div>
         <div className="hero-image">
           <StudioImage
             src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=85"
             alt={content.home.imageAlt}
             priority
           />
+          <div className="hero-copy">
+            <p className="eyebrow">{content.home.eyebrow}</p>
+            <h1 className="display-title">{content.home.title}</h1>
+            <p className="hero-intro">{content.home.intro}</p>
+          </div>
           <div className="hero-overlay-actions">
             <Link className="button button-light" href={`/${locale}/booking`}>
               {content.home.primaryCta}
               <span className="button-arrow" aria-hidden="true" />
             </Link>
             <Link className="button button-ghost" href={`/${locale}/services`}>
-              {content.navigation[0].label}
+              {content.navigation[1].label}
             </Link>
+            <a
+              className="button button-ghost hero-instagram-link"
+              href="https://www.instagram.com/coachdili"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" className="instagram-dot" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -98,16 +110,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="shell">
           <p className="quote">“{content.home.testimonial}”</p>
           <p className="quote-byline">{content.home.testimonialAuthor}</p>
-        </div>
-      </section>
-      <section className="cta-section section-warm">
-        <div className="shell">
-          <h2>{content.home.ctaTitle}</h2>
-          <p>{content.home.ctaBody}</p>
-          <Link className="button button-dark" href={`/${locale}/booking`}>
-            {content.home.primaryCta}
-            <span className="button-arrow" aria-hidden="true" />
-          </Link>
         </div>
       </section>
     </main>
