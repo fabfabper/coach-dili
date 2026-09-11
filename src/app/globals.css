@@ -168,6 +168,14 @@ textarea {
   background: transparent;
   color: inherit;
 }
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.mobile-language-switch {
+  display: none;
+}
 .hero {
   min-height: 760px;
   display: flex;
@@ -603,6 +611,17 @@ p {
   font-size: clamp(27px, 4vw, 48px);
   letter-spacing: -0.04em;
 }
+.contact-location-link {
+  color: var(--muted);
+  font-family: inherit !important;
+  font-size: 16px !important;
+  letter-spacing: normal !important;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+.contact-location-link:hover {
+  color: var(--ink);
+}
 .contact-instagram-link {
   display: inline-flex;
   align-self: flex-start;
@@ -667,16 +686,54 @@ p {
   }
   .menu-toggle {
     display: flex;
+    position: relative;
+    width: 44px;
+    height: 44px;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+  }
+  .mobile-language-switch {
+    display: inline-flex;
+    color: inherit;
     font-size: 12px;
-    text-transform: uppercase;
     letter-spacing: 0.12em;
   }
+  .main-navigation .language-switch {
+    display: none;
+  }
+  .menu-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
   .menu-toggle i {
-    width: 18px;
+    position: relative;
+    width: 16px;
     height: 1px;
     background: currentColor;
+  }
+  .menu-toggle i::before,
+  .menu-toggle i::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 1px;
+    background: currentColor;
+  }
+  .menu-toggle i::before {
+    top: -5px;
+  }
+  .menu-toggle i::after {
+    top: 5px;
   }
   .main-navigation {
     position: absolute;

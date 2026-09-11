@@ -5,7 +5,12 @@ export const siteConfig = {
   name: "Coach Dili",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://coach-dili.vercel.app",
   bookingUrl: process.env.NEXT_PUBLIC_SIMPLYBOOK_URL ?? "https://fabfabper.secure.simplybook.me",
-  location: "Zurich, Switzerland",
+  email: "pt@coachdili.ch",
+  location: "BLG SPORTS CLUB, Zürich",
+  venue: "BLG SPORTS CLUB",
+  streetAddress: "Heinrichstrasse 243",
+  postalCode: "8005",
+  city: "Zürich",
 };
 
 export function getMetadata(locale: Locale): Metadata {

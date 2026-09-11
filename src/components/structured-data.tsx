@@ -7,7 +7,13 @@ export function StructuredData() {
     name: siteConfig.name,
     url: siteConfig.url,
     areaServed: "Zurich",
-    address: { "@type": "PostalAddress", addressLocality: "Zurich", addressCountry: "CH" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: siteConfig.streetAddress,
+      postalCode: siteConfig.postalCode,
+      addressLocality: siteConfig.city,
+      addressCountry: "CH",
+    },
     sameAs: ["https://www.instagram.com/coachdili"],
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;

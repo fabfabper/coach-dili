@@ -28,16 +28,22 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         <Link className="wordmark" href={`/${locale}`} onClick={() => setOpen(false)} aria-label="Coach Dili home">
           COACH <span>DILI</span>
         </Link>
-        <button
-          className="menu-toggle"
-          type="button"
-          onClick={() => setOpen(!open)}
-          aria-expanded={open}
-          aria-controls="main-navigation"
-        >
-          <span>{open ? content.labels.close : content.labels.menu}</span>
-          <i aria-hidden="true" />
-        </button>
+        <div className="header-controls">
+          <Link className="language-switch mobile-language-switch" href={`/${alternate}`} onClick={() => setOpen(false)}>
+            {alternate.toUpperCase()}
+          </Link>
+          <button
+            className="menu-toggle"
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? content.labels.close : content.labels.menu}
+            aria-expanded={open}
+            aria-controls="main-navigation"
+          >
+            <span className="menu-toggle-label">{open ? content.labels.close : content.labels.menu}</span>
+            <i aria-hidden="true" />
+          </button>
+        </div>
         <nav id="main-navigation" className={`main-navigation${open ? " is-open" : ""}`} aria-label="Main navigation">
           <div className="nav-links">
             {content.navigation.map((item) => (

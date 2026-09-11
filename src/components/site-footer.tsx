@@ -29,7 +29,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="footer-links">
           <Link href={`/${locale}/privacy`}>{content.legal.privacyTitle}</Link>
           <Link href={`/${locale}/impressum`}>{content.legal.imprintTitle}</Link>
-          <a href="mailto:hello@coachdili.ch">hello@coachdili.ch</a>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
           <a
             className="instagram-link"
             href="https://www.instagram.com/coachdili"
