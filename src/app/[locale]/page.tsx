@@ -16,15 +16,22 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <main>
       <section className="hero">
         <div className="hero-image">
-          <StudioImage
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=85"
-            alt={content.home.imageAlt}
-            priority
-          />
+          <div className="hero-image-landscape">
+            <StudioImage
+              src="/photos/PHOTO-2026-09-18-10-04-50.jpg"
+              alt={content.home.imageAlt}
+              priority
+            />
+          </div>
+          <div className="hero-image-portrait">
+            <StudioImage
+              src="/photos/PHOTO-2026-09-18-10-05-15.jpg"
+              alt={content.home.imageAlt}
+              priority
+            />
+          </div>
           <div className="hero-copy">
             <p className="eyebrow">{content.home.eyebrow}</p>
-            <h1 className="display-title">{content.home.title}</h1>
-            <p className="hero-intro">{content.home.intro}</p>
           </div>
           <div className="hero-overlay-actions">
             <Link className="button button-light" href={`/${locale}/services`}>
@@ -71,7 +78,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <section className="split-section section-warm">
         <div className="split-image">
           <StudioImage
-            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1400&q=85"
+            src="/photos/PHOTO-2026-09-18-10-05-59.jpg"
             alt={content.about.imageAlt}
           />
         </div>
