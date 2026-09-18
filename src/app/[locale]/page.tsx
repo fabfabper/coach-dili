@@ -17,18 +17,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <section className="hero">
         <div className="hero-image">
           <div className="hero-image-landscape">
-            <StudioImage
-              src="/photos/PHOTO-2026-09-18-10-04-50.jpg"
-              alt={content.home.imageAlt}
-              priority
-            />
+            <StudioImage src="/photos/PHOTO-2026-09-18-10-04-50.jpg" alt={content.home.imageAlt} priority />
           </div>
           <div className="hero-image-portrait">
-            <StudioImage
-              src="/photos/PHOTO-2026-09-18-10-05-15.jpg"
-              alt={content.home.imageAlt}
-              priority
-            />
+            <StudioImage src="/photos/PHOTO-2026-09-18-10-05-15.jpg" alt={content.home.imageAlt} priority />
           </div>
           <div className="hero-copy">
             <p className="eyebrow">{content.home.eyebrow}</p>
@@ -77,10 +69,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       </section>
       <section className="split-section section-warm">
         <div className="split-image">
-          <StudioImage
-            src="/photos/PHOTO-2026-09-18-10-05-59.jpg"
-            alt={content.about.imageAlt}
-          />
+          <StudioImage src="/photos/PHOTO-2026-09-18-10-05-59.jpg" alt={content.about.imageAlt} />
         </div>
         <div className="split-copy">
           <p className="eyebrow">{content.home.trainerEyebrow}</p>

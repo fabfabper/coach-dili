@@ -11,10 +11,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <PageHero locale={rawLocale} eyebrow={content.about.eyebrow} title={content.about.title} />
       <section className="split-section section-light">
         <div className="split-image">
-          <StudioImage
-            src="/photos/PHOTO-2026-09-18-10-05-59.jpg"
-            alt={content.about.imageAlt}
-          />
+          <StudioImage src="/photos/PHOTO-2026-09-18-10-05-59.jpg" alt={content.about.imageAlt} />
         </div>
         <div className="split-copy">
           {content.about.body.map((paragraph) => (
