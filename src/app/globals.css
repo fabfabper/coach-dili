@@ -275,6 +275,9 @@ p {
   .hero-image-portrait {
     display: none;
   }
+  .services-bottom-image .image-fill {
+    object-position: center bottom;
+  }
 }
 .site-header-light .header-inner {
   border-bottom-color: rgba(244, 243, 239, 0.3);
