@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { PageHero, ServiceList } from "@/components/page-parts";
+import { PageHero, ServiceList, StudioImage } from "@/components/page-parts";
 import { getContent, isLocale } from "@/lib/content";
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -18,6 +18,9 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         <div className="shell">
           <ServiceList locale={rawLocale} services={content.servicesList} />
         </div>
+      </section>
+      <section className="split-image services-bottom-image">
+        <StudioImage src="/photos/PHOTO-2026-09-18-10-05-50.jpg" alt={content.home.imageAlt} />
       </section>
     </main>
   );
